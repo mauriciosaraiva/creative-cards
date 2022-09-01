@@ -1,0 +1,37 @@
+<template>
+  <h1>AppHome Teste Local 1</h1>
+  <ul class="grid_wrapper">
+    <li 
+      class="category_item"
+      v-for="category in uniqueCategories"
+      :key="category">
+      <router-link :to="{ name: 'Category', params: { category } }">
+      {{ category }}
+      </router-link>
+    </li>
+  </ul>
+</template>
+
+<script>
+import useCategory from '@/composables/useCategory';
+
+export default {
+  setup() {
+    const { uniqueCategories } = useCategory();
+    return { uniqueCategories };
+  },
+}
+</script>
+
+<style scoped>
+.category_item{
+  background: linear-gradient(30deg,#789,#2f4f4f);
+  padding: 6rem 0;
+}
+ul{
+  margin-top: 1rem;
+}
+li a{
+  font-size:20px;
+}
+</style>
