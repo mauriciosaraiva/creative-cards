@@ -1,10 +1,10 @@
 <template>
-  showOptions: {{ showOptions }}
+  <!-- showOptions: {{ showOptions }} -->
   currentSection: {{ currentSection }}
-  <div 
+    <!-- @mouseleave="showOptions = false" -->
+  <div
     class="text-input-wrapper"
     @mouseover="showOptions = true"
-    @mouseleave="showOptions = false"
   >
     <section class="text-input-header">
       <div>
@@ -66,7 +66,7 @@
             v-model="currentSection.justifyContent" 
             type="radio" 
             value="flex-start"
-            name="horizontal"
+            :name="currentSection.id"
           />
           <img src="../../assets/icons/left.svg" alt="left">
         </label>
@@ -75,7 +75,7 @@
             v-model="currentSection.justifyContent" 
             type="radio" 
             value="center"
-            name="horizontal"
+            :name="currentSection.id"
           />
           <img src="../../assets/icons/center.svg" alt="center">
         </label>
@@ -84,7 +84,7 @@
             v-model="currentSection.justifyContent" 
             type="radio" 
             value="flex-end"
-            name="horizontal"
+            :name="currentSection.id"
           />
           <img src="../../assets/icons/right.svg" alt="right">
         </label>
@@ -103,6 +103,7 @@
   import useCurrentCard from "@/composables/useCurrentCard";
 
   export default {
+    name: 'TextInput',
     props: { section: Object, sectionIndex: Number} ,
     setup(props) {
       const currentSection = reactive( props.section );
@@ -163,7 +164,7 @@ input[type='radio'], input[type='checkbox'] {
   height: 0;
 }
 /* Image Styles */
-/* + is the adjacents selector - selects all images which follow the readi/check-box */
+/* + is the adjacents selector - selects all images which follow the radio/check-box */
 input[type='radio'] + img, input[type='checkbox'] + img {
   cursor: pointer;
 }
