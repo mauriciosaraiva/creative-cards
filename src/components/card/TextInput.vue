@@ -1,10 +1,10 @@
 <template>
   <!-- showOptions: {{ showOptions }} -->
-  currentSection: {{ currentSection }}
-    <!-- @mouseleave="showOptions = false" -->
+  <!-- currentSection: {{ currentSection }} -->
   <div
     class="text-input-wrapper"
     @mouseover="showOptions = true"
+    @mouseleave="showOptions = false"
   >
     <section class="text-input-header">
       <div>
