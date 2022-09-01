@@ -1,5 +1,5 @@
 <template>
-  <h1>AppHome Teste Local 1</h1>
+  <h1>AppHome</h1>
   <ul class="grid_wrapper">
     <li 
       class="category_item"
