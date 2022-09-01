@@ -1,7 +1,11 @@
 <template>
-  <!-- showOptions: {{ showOptions }} -->
-  <!-- currentSection: {{ currentSection }} -->
-  <div class="text-input-wrapper">
+  showOptions: {{ showOptions }}
+  currentSection: {{ currentSection }}
+  <div 
+    class="text-input-wrapper"
+    @mouseover="showOptions = true"
+    @mouseleave="showOptions = false"
+  >
     <section class="text-input-header">
       <div>
         <button @click="updateSectionOrder(sectionIndex, -1)">
@@ -14,8 +18,6 @@
       <button @click="removeSection(sectionIndex)">X</button>
     </section>
     <textarea
-      @mouseover="showOptions = true"
-      @mouseleave="showOptions = false"
       v-model="currentSection.userInput"
       rows="4"
       cols="50">
@@ -97,6 +99,7 @@
     ref,
     watch 
   } from "vue";
+
   import useCurrentCard from "@/composables/useCurrentCard";
 
   export default {

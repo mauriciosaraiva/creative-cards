@@ -37,7 +37,7 @@ export default {
     });
 
     async function uploadFile(event) {
-      console.log(event);
+      // console.log(event);
       const reader = new FileReader();
       reader.onload = function() {
         state.imagePreview = reader.result;
@@ -57,7 +57,7 @@ export default {
         };
         const res = await axios(imageReqData);
         updateImage(res.data.url);
-        console.log(res)
+        // console.log(res)
       } catch (error) {
         throw new Error(error);
       }

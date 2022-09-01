@@ -28,7 +28,7 @@ export default {
 <style scoped>
 .card_wrapper {
   display: flex;
-  background: #35363a;
+  background: FFFFFF;
   color: white;
   /* box-shadow: 1px 1px 2px 2px #ddd inset; */
 }

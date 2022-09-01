@@ -23,7 +23,7 @@ export default function useCurrentCard() {
   }
 
   function updateCard(sectionIndex, data) {
-    console.log("updating the card: ", data);
+    // console.log("updating the card: ", data);
     selectedCard.value.pages[getPageIndex()].sections[sectionIndex] = data;
   }
 
@@ -72,7 +72,7 @@ export default function useCurrentCard() {
 
   function repositionImage(position) {
     selectedCard.value.pages[getPageIndex()].backgroundPosition = position;
-    console.log("Position: ", position);
+    // console.log("Position: ", position);
   }
 
   function removeImage() {
